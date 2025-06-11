@@ -75,11 +75,11 @@
                         Products <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18"></path></svg>
                       </a>
                       <ul class="dropdown-menu">
-                        <li><a id="product1" class="dropdown-item" href="Product1.html">OEM & White Labeling</a></li>
-                        <li><a id="product2" class="dropdown-item" href="Product2.html">Edge Touch Switch</a></li>
-                        <li><a id="product3" class="dropdown-item" href="Product3.html">Touch Switch Panel</a></li>
-                        <li><a id="product4" class="dropdown-item" href="Product4.html">Hotel Automation</a></li>
-                        <li><a id="product5" class="dropdown-item" href="Product5.html">Electric Automation<a></li/>
+                        <li><a id="product1" class="dropdown-item" href="product1.html">OEM & White Labeling</a></li>
+                        <li><a id="product2" class="dropdown-item" href="product2.html">Edge Touch Switch</a></li>
+                        <li><a id="product3" class="dropdown-item" href="product3.html">Touch Switch Panel</a></li>
+                        <li><a id="product4" class="dropdown-item" href="product4.html">Hotel Automation</a></li>
+                        <li><a id="product5" class="dropdown-item" href="product5.html">Electric Automation<a></li/>
                       </ul>
                     </li>
                     <li class="nav-item">
