@@ -21,7 +21,7 @@
       .trigger("resize"); // Trigger on page load
   });
   
-    fetch("https://script.google.com/macros/s/AKfycbwkjSIgbU6eKvfsRYhpuh6KySLKuB6ayoTzwv5tXZlShloFZ58hNUkMA9Xmawnnb9KYAw/exec")
+    fetch("https://script.google.com/macros/s/AKfycbylL2G8BN0SNarA1xe1BV-lCuHtKvK6UsEtRnHnTXcwl3J5yQkzuLVGfoObX5jD48vr/exec")
       .then(response => response.json())
       .then(data => {
         console.log(data);
