@@ -1029,7 +1029,7 @@ row-gap: 24px;
 /* product description section end */
 
 
-.extPart1 .secH{
+.extPart1 .secH {
   font-size: 50px;
   padding-bottom: 12px;
   font-weight: 800;
@@ -1063,3 +1063,37 @@ row-gap: 24px;
     color: #ff9800;
 }
 
+.PageBanner .therdH:hover{
+color: rgb(25, 73, 80);
+
+}
+
+.PageBanner .therdH {
+transition: 3ms ease-in-out;
+
+}
+
+.callDetails .secH{
+  font-weight: 600;
+ color: #000000;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-style: normal;
+}
+
+.callDetails .secH:hover{
+    color: #ff9800;
+    /* color:  hsla(324, 98%, 52%, 0.788); */
+}
+
+.callDetails.secH:hover{
+   transition: 1s ease-in-out;
+}
+
+.ourProd .secH:hover{
+  color: rgb(8, 50, 79);
+}
+
+.ourProd .secH{
+  transition: 5s ease-in-out;
+}
+ 
