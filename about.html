@@ -55,7 +55,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="ImgPart">
-              <img src="image/AboutPic1.jpg" id="a-our-story-image" alt="product Display">
+              <img src="image/AboutPic1.jpg" id="a-our-story-image" alt="product Display" loading="lazy">
            </div>
           </div>
           <div class="col-lg-6">
@@ -102,7 +102,7 @@
               <div class="col-lg-6">
                   <div class="row cardWrap">
                       <div class="col-auto cardlogo g-0">
-                        <img src="image/ourMission.png" id="a-mission-achivement-image1" alt="Flag in Hand pic">
+                        <img src="image/ourMission.png" id="a-mission-achivement-image1" alt="Flag in Hand pic" loading="lazy">
                       </div>
                       <div class="col textPart2">
                        <h2 class="fifthH" id="a-mission-achivement-title1">Our Mission</h2>
@@ -113,7 +113,7 @@
               <div class="col-lg-6">
                   <div class="row cardWrap">
                       <div class="col-auto cardlogo g-0">
-                        <img src="image/ourVission.png" id="a-mission-achivement-image2" alt="Flag in Hand pic">
+                        <img src="image/ourVission.png" id="a-mission-achivement-image2" alt="Flag in Hand pic" loading="lazy">
                       </div>
                       <div class="col textPart2">
                        <h2 class="fifthH" id="a-mission-achivement-title2">Our Vision</h2>
@@ -136,7 +136,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="cardVerticle text-center">
                 <div class="squareImg">
-                <img src="image/ExpertiseAndExperience.jpg" id="a-why-choose-us-image1" alt=" Expertise and Experience icon">
+                <img src="image/ExpertiseAndExperience.jpg" id="a-why-choose-us-image1" alt=" Expertise and Experience icon" loading="lazy">
                 </div>
                 <h2 class="therdH" id="a-why-choose-us-title1">Expertise and Experience</h2>
                 <p id="a-why-choose-us-content1">With over a decade of industry presence, Varni Digital Pvt. Ltd. brings unmatched expertise in smart home automation. Our deep understanding of technology and innovation enables us to deliver cutting-edge solutions tailored to modern needs.</p>
@@ -145,7 +145,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="cardVerticle text-center">
                 <div class="squareImg">
-                <img src="image/QualityAssurance.jpg" id="a-why-choose-us-image2" alt=" Quality Assurance icon">
+                <img src="image/QualityAssurance.jpg" id="a-why-choose-us-image2" alt=" Quality Assurance icon" loading="lazy">
                 </div>
                 <h2 class="therdH" id="a-why-choose-us-title2">Quality Assurance</h2>
                 <p id="a-why-choose-us-content2">We prioritize excellence in every product, ensuring top-notch quality through rigorous testing and advanced manufacturing standards. Our commitment to superior craftsmanship guarantees reliability, durability, and high performance in all our smart home solutions.</p>
@@ -154,7 +154,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="cardVerticle text-center">
                 <div class="squareImg">
-                <img src="image/CustomerSatisfaction.jpg" id="a-why-choose-us-image3" alt=" Customer Satisfaction icon">
+                <img src="image/CustomerSatisfaction.jpg" id="a-why-choose-us-image3" alt=" Customer Satisfaction icon" loading="lazy">
                 </div>
                 <h2 class="therdH" id="a-why-choose-us-title3">Customer Satisfaction</h2>
                 <p id="a-why-choose-us-content3">Customer satisfaction is at the heart of our business. We strive to exceed expectations by providing exceptional products, responsive support, and seamless user experiences, fostering long-term relationships built on trust and reliability.</p>
@@ -163,7 +163,7 @@
             <div class="col-lg-3 col-md-6">
               <div class="cardVerticle text-center">
                 <div class="squareImg">
-                <img src="image/TailoredSolutions.jpg" id="a-why-choose-us-image4" alt=" Tailored Solutions icon">
+                <img src="image/TailoredSolutions.jpg" id="a-why-choose-us-image4" alt=" Tailored Solutions icon" loading="lazy">
                 </div>
                 <h2 class="therdH" id="a-why-choose-us-title4">Tailored Solutions</h2>
                 <p id="a-why-choose-us-content4">Every home and business is unique, and so are our solutions. We offer customized smart home automation products designed to fit specific requirements, ensuring optimal functionality, convenience, and enhanced living experiences for our customers.</p>
@@ -173,6 +173,10 @@
         </div>
         </div>
       </section>
+
+      <div id="loader">
+  <div class="spinner"></div>
+</div>
 
 
 
@@ -325,6 +329,7 @@
 </script>
   
   <script>
+    document.getElementById("loader").style.display = "flex";
     fetch("https://script.google.com/macros/s/AKfycbylL2G8BN0SNarA1xe1BV-lCuHtKvK6UsEtRnHnTXcwl3J5yQkzuLVGfoObX5jD48vr/exec")
       .then(response => response.json())
       .then(data => {
@@ -359,9 +364,20 @@
         document.getElementById("a-why-choose-us-title4").textContent = data.a_why_chooose_us_title4;
         document.getElementById("a-why-choose-us-content4").textContent = data.a_why_choose_us_content4;
       })
-      .catch(error => console.error("Error fetching data:", error));
+      .catch(error => console.error("Error fetching data:", error))
+      .finally(() => {
+        // Add 1s delay, then fade out loader
+        setTimeout(() => {
+          const loader = document.getElementById("loader");
+          loader.classList.add("hide");
+          setTimeout(() => loader.style.display = "none", 500);
+        }, 1000);
+      });
   </script>
 
     <script defer src="js/script.js"></script>
   </body>
 </html>
+
+
+

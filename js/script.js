@@ -21,6 +21,8 @@
       .trigger("resize"); // Trigger on page load
   });
   
+     document.getElementById("loader").style.display = "flex";
+
     fetch("https://script.google.com/macros/s/AKfycbylL2G8BN0SNarA1xe1BV-lCuHtKvK6UsEtRnHnTXcwl3J5yQkzuLVGfoObX5jD48vr/exec")
       .then(response => response.json())
       .then(data => {
@@ -40,7 +42,17 @@
         document.getElementById("footer_address").innerHTML = data.footer_address;
 
       })
-      .catch(error => console.error("Error fetching data:", error));
+      
+      .catch(error => console.error("Error fetching data:", error))
+      .finally(() => {
+        // Add 1s delay, then fade out loader
+        setTimeout(() => {
+          const loader = document.getElementById("loader");
+          loader.classList.add("hide");
+          setTimeout(() => loader.style.display = "none", 500);
+        }, 1000);
+      });
+  
       
   document.getElementById("header").innerHTML =
   ` <nav  class="navbar navbar-expand-lg bg-light HomePage0">
