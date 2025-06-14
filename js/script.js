@@ -21,19 +21,10 @@
       .trigger("resize"); // Trigger on page load
   });
   
-     document.getElementById("loader").style.display = "flex";
-
     fetch("https://script.google.com/macros/s/AKfycbylL2G8BN0SNarA1xe1BV-lCuHtKvK6UsEtRnHnTXcwl3J5yQkzuLVGfoObX5jD48vr/exec")
       .then(response => response.json())
       .then(data => {
         console.log(data);
-
-        document.getElementById("logo").src = data.logo;
-        document.getElementById("product1").innerHTML = data.product1;
-        document.getElementById("product2").innerHTML = data.product2;
-        document.getElementById("product3").innerHTML = data.product3;
-        document.getElementById("product4").innerHTML = data.product4;
-        document.getElementById("product5").innerHTML = data.product5;
 
         document.getElementById("footer_logo").src = data.footer_logo;
         document.getElementById("footer_description").innerHTML = data.footer_description;
@@ -42,106 +33,9 @@
         document.getElementById("footer_address").innerHTML = data.footer_address;
 
       })
+      .catch(error => console.error("Error fetching data:", error));
       
-      .catch(error => console.error("Error fetching data:", error))
-      .finally(() => {
-        // Add 1s delay, then fade out loader
-        setTimeout(() => {
-          const loader = document.getElementById("loader");
-          loader.classList.add("hide");
-          setTimeout(() => loader.style.display = "none", 500);
-        }, 1000);
-      });
-  
-      
-  document.getElementById("header").innerHTML =
-  ` <nav  class="navbar navbar-expand-lg bg-light HomePage0">
-  <div class="container header">
-  <a class="navbar-brand"  href="index.html">
-   <img id="logo"  src="image/VarniLogo.avif" alt="Varni Digital Logo">
-  </a>
-  <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item ">
-                    <a class="nav-link" aria-current="page" href ="index.html"
-                        >Home</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="about.html">About Us </a>
-                    </li>
-                
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Products <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 18L24 30L12 18"></path></svg>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a id="product1" class="dropdown-item" href="product1.html">OEM & White Labeling</a></li>
-                        <li><a id="product2" class="dropdown-item" href="product2.html">Edge Touch Switch</a></li>
-                        <li><a id="product3" class="dropdown-item" href="product3.html">Touch Switch Panel</a></li>
-                        <li><a id="product4" class="dropdown-item" href="product4.html">Hotel Automation</a></li>
-                        <li><a id="product5" class="dropdown-item" href="product5.html">Electric Automation<a></li/>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Contact</a>
-                      </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>`;
 
-
-            function highlightActiveLink() {
-              let currentPath = window.location.pathname;
-              let currentFile = currentPath.split('/').pop() || 'index.html';
-              currentFile = currentFile.split('?')[0]; // remove query strings
-            
-              const navLinks = document.querySelectorAll('.nav-link, .dropdown-item'); // include dropdown items
-              
-              navLinks.forEach(link => {
-                const href = link.getAttribute('href')?.split('?')[0]; // safe getAttribute
-                if (!href || href === '#') return; // skip non-page links
-                
-                if (href === currentFile) {
-                  link.classList.add('active');
-                  
-                  // Also highlight parent <li> if it's a dropdown (optional)
-                  const parentDropdown = link.closest('.dropdown');
-                  if (parentDropdown) {
-                    const toggleLink = parentDropdown.querySelector('.nav-link.dropdown-toggle');
-                    toggleLink?.classList.add('active');
-                  }
-                } else {
-                  link.classList.remove('active');
-                }
-              });
-            }
-            
-            
-            document.addEventListener('DOMContentLoaded', () => {
-              if (typeof loadContent === 'function') {
-                loadContent(() => {
-                  highlightActiveLink();
-                });
-              } else {
-                highlightActiveLink(); // fallback if header is already there
-              }
-            });
 
             document.getElementById("footer").innerHTML =`
             <div class="container ">
