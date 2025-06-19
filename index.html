@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="image/Fevicon.webp" />
+
   <title>VARNI DIGITAL PRIVATE LIMITED in Bengaluru, India</title>
 
 
@@ -113,8 +113,8 @@
                     <a class="h-banner-location" target="_blank" href="https://maps.app.goo.gl/y1domAjNbhcsAZZUA"><i
                         class="fa-solid fa-location-dot"></i> Vadodara, India</a>
                   </div>
-                  <a class="fillBtn" href="product1.html">Our Products</a>
-                  <a class="WhiteBtn" href="contact.html">Make an enquiry</a>
+                  <a class="fillBtn" href="#our_products">Our Products</a>
+                  <a class="WhiteBtn" href="contact.html#contact_Form">Make an enquiry</a>
                 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@
                         class="fa-solid fa-location-dot"></i> Vadodara, India</a>
                   </div>
                   <a class="fillBtn" href="#">Our Products</a>
-                  <a class="WhiteBtn" href="contact.html">Make an enquiry</a>
+                  <a class="WhiteBtn" href="contact.html#contact_Form">Make an enquiry</a>
                 </div>
               </div>
             </div>
@@ -196,7 +196,7 @@
   <!-- our story section end -->
 
   <!-- product section Start  -->
-  <section class="productSection pt-0 defaultPadding">
+  <section id="our_products" class="productSection pt-0 defaultPadding">
     <div class="container">
       <div class="ourProd">
         <h2 class="secH">our Products</h2>
@@ -508,11 +508,16 @@
         document.getElementById("h-product-title3").textContent = data.h_product_title3;
         document.getElementById("h-product-content3").textContent = data.h_product_content3;
         document.getElementById("logo").src = data.logo;
+        // document.getElementById("fevicon-image").src = data.fevicon_image;
         document.getElementById("product1").innerHTML = data.product1;
         document.getElementById("product2").innerHTML = data.product2;
         document.getElementById("product3").innerHTML = data.product3;
         document.getElementById("product4").innerHTML = data.product4;
         document.getElementById("product5").innerHTML = data.product5;
+        // Update favicon dynamically
+
+
+
         const imageUrls = [
           data.h_gallery_image1,
           data.h_gallery_image2,
@@ -603,76 +608,3 @@
 
 
 
-
-
-
-
-<!-- <script>
-    fetch("https://script.google.com/macros/s/AKfycbwkjSIgbU6eKvfsRYhpuh6KySLKuB6ayoTzwv5tXZlShloFZ58hNUkMA9Xmawnnb9KYAw/exec")
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-
-
-// Update all banner titles
-document.querySelectorAll(".h-banner-title").forEach(el => {
-  el.innerHTML = data.h_banner_title;
-});
-
-// Update all banner mobiles
-document.querySelectorAll(".h-banner-mobile").forEach(el => {
-  el.innerHTML = `<i class="fa-solid fa-phone"></i> ${data.h_banner_mobile}`;
-});
-
-// Update all banner locations
-document.querySelectorAll(".h-banner-location").forEach(el => {
-  el.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.h_banner_location}`;
-});
-
-  const item = document.querySelector(".item1");
-  if (item) {
-    item.style.background = `linear-gradient(#0000008c, #0000008c), url(${data.h_banner_image1}) center/cover no-repeat`;
-    item.style.backgroundSize = "cover"; // ensure 'cover' is applied properly
-  }
-  const item2 = document.querySelector(".item2");
-  if (item2) {
-    console.log("image2 :",item2);
-    
-    item2.style.background = `linear-gradient(#0000008c, #0000008c), url(${data.h_banner_image2}) center/cover no-repeat`;
-    item2.style.backgroundSize = "cover"; // ensure 'cover' is applied properly
-  }
-  const item3 = document.querySelector(".item3");
-  if (item3) {
-    item3.style.background = `linear-gradient(#0000008c, #0000008c), url(${data.h_banner_image3}) center/cover no-repeat`;
-    item3.style.backgroundSize = "cover"; // ensure 'cover' is applied properly
-  }
-
-
-
-
-
-        document.getElementById("logo").src = data.logo;
-        document.querySelectorAll(".h-banner-title")[0].innerHTML = data.h_banner_title;
-        document.getElementsByClassName("h-banner-mobile").textContent = data.h_banner_mobile;
-        document.getElementsByClassName("h-banner-location").textContent = data.h_banner_location;
-        document.getElementById("h-container-image").src = data.h_container_image;
-        document.getElementById("h-container-title").textContent = data.h_container_title;
-        document.getElementById("h_container_description").textContent = data.h_container_description;
-        document.getElementById("h-gallery-image1").src = data.h_gallery_image1;
-        document.getElementById("h-gallery-image2").src = data.h_gallery_image2;
-        document.getElementById("h-gallery-image3").src = data.h_gallery_image3;
-        document.getElementById("h-gallery-image4").src = data.h_gallery_image4;
-
-
-        document.getElementById("h-product-image1").src = data.h_product_image1;
-        document.getElementById("h-product-title1").textContent = data.h_product_title1;
-        document.getElementById("h-product-content1").textContent = data.h_product_content1;
-        document.getElementById("h-product-image2").src = data.h_product_image2;
-        document.getElementById("h-product-title2").textContent = data.h_product_title2;
-        document.getElementById("h-product-content2").textContent = data.h_product_content2;
-        document.getElementById("h-product-image3").src = data.h_product_image3;
-        document.getElementById("h-product-title3").textContent = data.h_product_title3;
-        document.getElementById("h-product-content3").textContent = data.h_product_content3;
-      })
-      .catch(error => console.error("Error fetching data:", error));
-  </script> -->
