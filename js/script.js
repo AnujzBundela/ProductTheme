@@ -100,6 +100,7 @@
         document.getElementById("footer_contact").innerHTML = data.footer_contact;
         document.getElementById("footer_email").innerHTML = data.footer_email;
         document.getElementById("footer_address").innerHTML = data.footer_address;
+        document.querySelector(".Call-fab-container a").href = data.call_number;
         document.getElementById("footer_copyright").innerHTML = 
           data["footer-copyright"]; // use bracket notation for hyphenated keys
 
