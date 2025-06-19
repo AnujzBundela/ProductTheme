@@ -99,7 +99,8 @@
         document.getElementById("footer_description").innerHTML = data.footer_description;
         document.getElementById("footer_contact").innerHTML = data.footer_contact;
         document.getElementById("footer_email").innerHTML = data.footer_email;
-        document.getElementById("footer_address").innerHTML = data.footer_address;
+        document.getElementById("footer_address").innerHTML = data.footer_address
+        document.querySelector(".set-url-target").href = data.whatsapp_url;
         document.querySelector(".Call-fab-container a").href = data.call_number;
         document.getElementById("footer_copyright").innerHTML = 
           data["footer-copyright"]; // use bracket notation for hyphenated keys
