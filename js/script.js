@@ -1,24 +1,5 @@
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // WhatsApp URLs for desktop and mobile
-    var hrefs = [
-      "https://web.whatsapp.com/send?phone=918169027914", // Desktop
-      "https://api.whatsapp.com/send?phone=918169027914"  // Mobile
-    ];
 
-    // Function to update hrefs
-    function updateWhatsAppHref() {
-      var isMobile = window.innerWidth < 768;
-      $(".set-url-target").attr("href", hrefs[isMobile ? 1 : 0]);
-    }
-
-    // Attach resize event with debounce
-    $(window)
-      .on("resize", function () {
-        clearTimeout(this.resizeTimer);
-        this.resizeTimer = setTimeout(updateWhatsAppHref, 200);
-      })
-      .trigger("resize");
 
     // Inject footer HTML
     document.getElementById("footer").innerHTML = `
@@ -100,12 +81,33 @@
         document.getElementById("footer_contact").innerHTML = data.footer_contact;
         document.getElementById("footer_email").innerHTML = data.footer_email;
         document.getElementById("footer_address").innerHTML = data.footer_address
-        document.querySelector(".set-url-target").href = data.whatsapp_url;
         document.querySelector(".Call-fab-container a").href = data.call_number;
         document.getElementById("footer_copyright").innerHTML = 
           data["footer-copyright"]; // use bracket notation for hyphenated keys
 
           const faviconLink = document.querySelector("link[rel~='icon']");
+          
+// WhatsApp URLs for desktop and mobile
+const hrefs = [
+  `https://web.whatsapp.com/send?phone=${data.whatsapp_url_desktop}`, // Desktop
+  `https://api.whatsapp.com/send?phone=${data.whatsapp_url_mobile}`   // Mobile
+];
+
+// Function to update WhatsApp href
+function updateWhatsAppHref() {
+  const isMobile = window.innerWidth < 768;
+  document.querySelector(".set-url-target").setAttribute("href", hrefs[isMobile ? 1 : 0]);
+}
+
+// Initial run
+updateWhatsAppHref();
+
+// Attach resize event with debounce
+window.addEventListener("resize", () => {
+  clearTimeout(window.resizeTimer);
+  window.resizeTimer = setTimeout(updateWhatsAppHref, 200);
+});
+
 
   const link = document.createElement('link');
   link.rel = 'icon';
@@ -115,6 +117,6 @@
       .catch(error => {
         console.error("Error fetching footer data:", error);
       });
-  });
+ 
 
 
