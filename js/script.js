@@ -81,6 +81,10 @@ fetch("https://script.google.com/macros/s/AKfycbylL2G8BN0SNarA1xe1BV-lCuHtKvK6Us
     document.getElementById("footer_address").href = data.footer_address_link || "#";
     document.getElementById("footer_copyright").innerHTML = data["footer-copyright"];
 
+    document.getElementById("footer_contact").href = `tel:${data.footer_contact}`;
+    document.getElementById("footer_email").href = `mailto:${data.footer_email}`;
+    document.getElementById("footer_address").href = data.footer_address_link;
+
     // Set favicon dynamically
     const link = document.createElement("link");
     link.rel = "icon";

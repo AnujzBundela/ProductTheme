@@ -69,7 +69,7 @@
                         <li><a id="product2" class="dropdown-item" href="product2.html">Edge Touch Switch</a></li>
                         <li><a id="product3" class="dropdown-item" href="product3.html">Touch Switch Panel</a></li>
                         <li><a id="product4" class="dropdown-item" href="product4.html">Hotel Automation</a></li>
-                        <li><a id="product5" class="dropdown-item" href="product5.html">Electric Automation<a></li/>
+                        <li><a id="product5" class="dropdown-item" href="product5.html">Electric Automation<a></li>
                       </ul>
                     </li>
                     <li class="nav-item">
@@ -108,9 +108,7 @@
                     <p>
                       <a href="#" title="+91 63547 10794" id="c-mobile-number1" class="underline" >+91 63547 10794</a>
                     </p>
-                    <p>
-                      <a href="#" title="+91 79909 09711" id="c-mobile-number2" class="underline"  >+91 79909 09711</a>
-                    </p>
+                    
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -118,7 +116,7 @@
                     <span class="iconify" data-icon="line-md:my-location-loop" data-inline="false"></span>
                     <h3 class="therdH">Address</h3>
                     <p>
-                      <a href="#" id="c-address" class="underline" > TF-A1-22, Akshar Pavilion Mall, Near Priya Cinema,Vasna Bhyali Main Road, Vadodara,391410</a>
+                      <a href="vimal@gmail.com" id="c-address" class="underline" > TF-A1-22, Akshar Pavilion Mall, Near Priya Cinema,Vasna Bhyali Main Road, Vadodara,391410</a>
                     </p>
                   </div>
                 </div>
@@ -126,7 +124,7 @@
                   <div class="contact2-infobox">
                     <span class="iconify" data-icon="line-md:email-filled" data-inline="false"></span>
                     <h3 class="therdH">Email</h3>
-                    <a href="3" id="c-email" title="#" class="underline" >contact@shriiitrackingsolutions.com</a>
+                    <a href="" id="c-email" title="#" class="underline" >contact@shriiitrackingsolutions.com</a>
                   </div>
                 </div>
               </div>
@@ -571,7 +569,6 @@
         console.log(data);
 
         document.getElementById("c-mobile-number1").textContent = data.c_mobile_number1;
-        document.getElementById("c-mobile-number2").textContent = data.c_mobile_number2;
         document.getElementById("c-address").textContent = data.c_address;
         document.getElementById("c-email").textContent = data.c_email;
         document.getElementById("c-time-monday").textContent = data.c_time_monday;
@@ -587,8 +584,10 @@
         document.getElementById("product3").innerHTML = data.product3;
         document.getElementById("product4").innerHTML = data.product4;
         document.getElementById("product5").innerHTML = data.product5;
+        document.getElementById("c-mobile-number1").href=`tel:${data.c_mobile}`;
+        document.getElementById("c-email").href= `mailto:${data.c_email}`;
+        document.getElementById("c-address").href = data.c_address_url;
 
-       
       })
       .catch(error => console.error("Error fetching data:", error))
       .finally(() => {
