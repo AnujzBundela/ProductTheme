@@ -108,7 +108,7 @@
         <div class="col-lg-7 col-xl-6 ps-xl-5">
           <div class="storyText">
           <h3 class="fourthH">Description</h3>
-          <p id="product_description1"> CompanyName is the largest manufacturer of Touch Switch & Automation Product in India since 2013. We have developed and supplied our product to more than 200+ OEMs across the World. We have manufactured & supplied more than 5,00,000+ devices. </p>
+          <p id="product-description1"> CompanyName is the largest manufacturer of Touch Switch & Automation Product in India since 2013. We have developed and supplied our product to more than 200+ OEMs across the World. We have manufactured & supplied more than 5,00,000+ devices. </p>
           <a class="fillBtn" href="contact.html#contact_Form">Make An Enquiry</a>
             </div>
           
@@ -342,7 +342,7 @@
           el.textContent = data.product_title1;
         });
         document.getElementById("product-image1").src = data.product_image1;
-        document.getElementById("product_description1").textContent = data.product_description1;
+        document.getElementById("product-description1").textContent = data.product_description1;
         document.getElementById("product-content1").textContent = data.product_content1;
          document.getElementById("logo").src = data.logo;
         document.getElementById("product1").innerHTML = data.product1;
@@ -350,6 +350,8 @@
         document.getElementById("product3").innerHTML = data.product3;
         document.getElementById("product4").innerHTML = data.product4;
         document.getElementById("product5").innerHTML = data.product5;
+
+        
       })
       .catch(error => console.error("Error fetching data:", error))
       .finally(() => {
