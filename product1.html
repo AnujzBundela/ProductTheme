@@ -62,7 +62,7 @@
                       </svg>
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a id="product1 active" class="dropdown-item" href="product1.html">OEM & White Labeling</a></li>
+                      <li><a id="product1" class="dropdown-item" href="product1.html">OEM & White Labeling</a></li>
                       <li><a id="product2" class="dropdown-item" href="product2.html">Edge Touch Switch</a></li>
                       <li><a id="product3" class="dropdown-item" href="product3.html">Touch Switch Panel</a></li>
                       <li><a id="product4" class="dropdown-item" href="product4.html">Hotel Automation</a></li>
@@ -107,22 +107,26 @@
         </div>
         <div class="col-lg-7 col-xl-6 ps-xl-5">
           <div class="storyText">
-          <h3 class="fourthH">Description</h3>
-          <p id="product-description1"> CompanyName is the largest manufacturer of Touch Switch & Automation Product in India since 2013. We have developed and supplied our product to more than 200+ OEMs across the World. We have manufactured & supplied more than 5,00,000+ devices. </p>
-          <a class="fillBtn" href="contact.html#contact_Form">Make An Enquiry</a>
-            </div>
-          
+            <h3 class="fourthH">Description</h3>
+            <p id="product-description1"> CompanyName is the largest manufacturer of Touch Switch & Automation Product
+              in India since 2013. We have developed and supplied our product to more than 200+ OEMs across the World.
+              We have manufactured & supplied more than 5,00,000+ devices. </p>
+            <a class="fillBtn" href="contact.html#contact_Form">Make An Enquiry</a>
+          </div>
+
         </div>
       </div>
-      <p id="product-content1" class="text-center mt-5"> Our team is committed to delivering exceptional service, from the initial consultation to the final installation, ensuring our clients are fully satisfied with the results. </p>
+      <p id="product-content1" class="text-center mt-5"> Our team is committed to delivering exceptional service, from
+        the initial consultation to the final installation, ensuring our clients are fully satisfied with the results.
+      </p>
     </div>
   </section>
   <!-- product description section end -->
 
 
-   <div id="loader">
-  <div class="spinner"></div>
-</div>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
 
   <!-- whatsapp FAB icon -->
@@ -344,14 +348,14 @@
         document.getElementById("product-image1").src = data.product_image1;
         document.getElementById("product-description1").textContent = data.product_description1;
         document.getElementById("product-content1").textContent = data.product_content1;
-         document.getElementById("logo").src = data.logo;
+        document.getElementById("logo").src = data.logo;
         document.getElementById("product1").innerHTML = data.product1;
         document.getElementById("product2").innerHTML = data.product2;
         document.getElementById("product3").innerHTML = data.product3;
         document.getElementById("product4").innerHTML = data.product4;
         document.getElementById("product5").innerHTML = data.product5;
 
-        
+
       })
       .catch(error => console.error("Error fetching data:", error))
       .finally(() => {
@@ -369,8 +373,3 @@
 </body>
 
 </html>
-
-
-
-
-    
